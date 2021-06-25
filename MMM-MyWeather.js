@@ -1009,7 +1009,7 @@ Module.register("MMM-MyWeather", {
       //Log.info("observation logo " + this.weatherType)
       this.windDirection = this.deg2Cardinal(data.current.data[0].wind_dir);
       this.windDirectionTxt = data.current.data[0].wind_cdir;
-      this.Humidity = data.current.data[0].rh;
+      this.Humidity = this.roundValue(data.current.data[0].rh);
       this.windSpeed = "wi-wind-beaufort-" + this.ms2Beaufort(data.current.data[0].wind_spd * 3.6); // in m/s from API
       this.windSpeedKph = Math.round(data.current.data[0].wind_spd * 3.6) ;
       this.windSpeedMph = Math.round(data.current.data[0].wind_spd * 2.237) ;
